@@ -4,17 +4,17 @@ Hi!
 
 This tool generates html files from ect templates.
 
-I spied the idea from [https://bitbucket.org/2no/grunt-ect](), but I'm not entirely staged implementation. 
+I spied the idea from [https://bitbucket.org/2no/grunt-ect](), because I'm not entirely staged implementation. 
 I decided to start with the addition of support patterns in the file names. In fact, I rewrote almost all the implementation.
 
 
 ## Getting Started
 
-<!-- install via npm
+ install via npm
 
-	npm install git+ssh://git@bitbucket.org:2no/grunt-ect.git
--->
-<!-- and in your Gruntfile.js file: -->
+	npm install npm install git+ssh://git@github.com:shuvalov-anton/grunt-ect.git --save-dev
+
+and in your Gruntfile.js file:
 
 	grunt.loadNpmTasks('grunt-ect');
 

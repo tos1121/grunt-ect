@@ -1,44 +1,42 @@
 # grunt-ect
 
+Hi!
+
+This tool generates html files from ect templates.
+
+I spied the idea from [https://bitbucket.org/2no/grunt-ect](), but I'm not entirely staged implementation. 
+I decided to start with the addition of support patterns in the file names. In fact, I rewrote almost all the implementation.
+
+
 ## Getting Started
 
-install via npm
+<!-- install via npm
 
-    npm install git+ssh://git@bitbucket.org:2no/grunt-ect.git
+	npm install git+ssh://git@bitbucket.org:2no/grunt-ect.git
+-->
+<!-- and in your Gruntfile.js file: -->
 
-and in your Gruntfile.js file:
-
-    grunt.loadNpmTasks('grunt-ect');
+	grunt.loadNpmTasks('grunt-ect');
 
 ## Usage
 
-    grunt.initConfig({
-      ect: {
-        top: {
-          options: {
-            root: 'test/ect',
-          },
-          src:  'page',
-          dest: 'test/page.html',
-          variables: {
-            title : 'Hello, world!',
-            id : 'main',
-            links: [
-              { name : 'Google', url : 'http://google.com/' },
-              { name : 'Facebook', url : 'http://facebook.com/' },
-              { name : 'Twitter', url : 'http://twitter.com/' }
-            ],
-            upperHelper : function (string) {
-              return string.toUpperCase();
-            }
-          }
-        },
-        ...
-      },
-      ...
-    });
+	module.exports = function (grunt) {
+		grunt.initConfig({
+			ect: {
+				task: {
+					options: {
+						root: 'ect-test/ect'
+					},
+					src:  'page_*.ect',
+					dst: 'ect-test/'
+				}
+			}
+		});
+		grunt.task.registerTask('default', 'ect');
+		grunt.loadNpmTasks('grunt-ect');
+	};
 
 run with:
 
-    grunt ect
+	grunt ect
 

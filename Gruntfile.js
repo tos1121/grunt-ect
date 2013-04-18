@@ -4,27 +4,17 @@ module.exports = function(grunt)
 {
   grunt.initConfig({
     ect: {
-      top: {
+      test: {
         options: {
-          root: 'test/ect',
+          root: 'tests/ect'
         },
-        src:  'page',
-        dest: 'test/page.html',
-        variables: {
-          title : 'Hello, world!',
-          id : 'main',
-          links: [
-            { name : 'Google', url : 'http://google.com/' },
-            { name : 'Facebook', url : 'http://facebook.com/' },
-            { name : 'Twitter', url : 'http://twitter.com/' }
-          ],
-          upperHelper : function (string) {
-            return string.toUpperCase();
-          }
-        }
-      },
-    },
+        src:  ['pages-ect/page_*.ect','other-pages-ect/page_*.ect'],
+        // src:  'other-pages-ect/page_*.ect',
+        dst: 'tests/'
+      }
+    }
   });
 
+  grunt.task.registerTask('default', 'ect');
   grunt.loadTasks('tasks');
 };

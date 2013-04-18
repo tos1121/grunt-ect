@@ -5,9 +5,10 @@
     "forin": true,   
     "jquery": false, 
     "laxcomma": true,
-    "maxdepth": 2,   
+    "maxdepth": 3,   
     "node": true,
     "quotmark": "single",
     "strict": true,  
-    "undef": true
+    "undef": true,
+    "unused": true 
 }

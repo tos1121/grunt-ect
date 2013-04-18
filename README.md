@@ -40,3 +40,11 @@ run with:
 
 	grunt ect
 
+## Service variables
+
+Service variables are available into each template.
+### List of service variables
+
+*	`basename`: `page`
+*	`filename`: `page.ect`
+*	`src`: `/abs/path/to/my/pwd/page.ect`

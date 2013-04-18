@@ -9,21 +9,29 @@ module.exports = function(grunt) {
 	grunt.registerMultiTask('ect', 'generates an html file from an ect templates', function() {
 
 
-		var	data      = this.data;
-		var dir       = data.dst;
-		var done      = this.async;
-		var options   = data.options;
-		var root      = options.root;
-		var src       = data.src;
-		var status    = true;
-		var variables = data.variables || {};
-		var ect       = new ECT(options || {});
+		var	data          = this.data;
+		var dir           = data.dst;
+		var done          = this.async;
+		var options       = data.options;
+		var root          = options.root;
+		var src           = data.src;
+		var status        = true;
+		var variables     = data.variables || {};
+			variables.ect = {};
+		var ect           = new ECT(options || {});
 
 
 		var render = function (src, dst) {
 
 			if (!src || !dst) return false;
 			if (!grunt.file.exists(src)) return false;
+
+			// init service variables
+			variables._ect = {
+				basename: path.basename(src, path.extname(src)),
+				filename: path.basename(src),
+				src: src
+			};
 
 			var html = ect.render(src, variables);
 			if (!html) return false;
@@ -62,6 +70,7 @@ module.exports = function(grunt) {
 			}
 			return outcome;
 		};
+
 
 		var getFilesList = function (root, src) {
 			var pattern;

@@ -6,10 +6,12 @@ module.exports = function(grunt)
     ect: {
       test: {
         options: {
-          root: 'tests/ect'
+          ext: '.ect',
+          root: 'tests/ect',
+          open: '{{',
+          close: '}}'
         },
         src:  ['pages-ect/page_*.ect','other-pages-ect/page_*.ect'],
-        // src:  'other-pages-ect/page_*.ect',
         dst: 'tests/'
       }
     }

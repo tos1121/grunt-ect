@@ -1,0 +1,156 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.8.8/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.1.59
+3 info using node@v0.8.8
+4 verbose publish [ '.' ]
+5 verbose read json /Volumes/shuvalov/Users/shuvalov/Desktop/grunt-ect/package.json
+6 verbose cache add [ '.', null ]
+7 silly cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { pathname: '.', path: '.', href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /Volumes/shuvalov/Users/shuvalov/.npm/3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ '/var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/tmp.tgz
+14 verbose folder .
+15 info prepublish grunt-ect-templates@0.2.1
+16 silly lockFile 86b72afc-63826-0-5083397410344332-tmp-tgz /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/tmp.tgz
+17 verbose lock /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/tmp.tgz /Volumes/shuvalov/Users/shuvalov/.npm/86b72afc-63826-0-5083397410344332-tmp-tgz.lock
+18 silly lockFile 86b72afc-63826-0-5083397410344332-tmp-tgz /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/tmp.tgz
+19 verbose tar unpack /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/tmp.tgz
+20 silly lockFile b208faf3-63826-0-5083397410344332-package /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package
+21 verbose lock /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package /Volumes/shuvalov/Users/shuvalov/.npm/b208faf3-63826-0-5083397410344332-package.lock
+22 silly gunzTarPerm modes [ '777', '666' ]
+23 silly gunzTarPerm extractEntry package.json
+24 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+25 silly gunzTarPerm extractEntry .npmignore
+26 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+27 silly gunzTarPerm extractEntry README.md
+28 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+29 silly gunzTarPerm extractEntry Gruntfile.js
+30 silly gunzTarPerm modified mode [ 'Gruntfile.js', 420, 438 ]
+31 silly gunzTarPerm extractEntry .jshintrc
+32 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+33 silly gunzTarPerm extractEntry _test/ect/footer
+34 silly gunzTarPerm modified mode [ '_test/ect/footer', 420, 438 ]
+35 silly gunzTarPerm extractEntry _test/ect/layout
+36 silly gunzTarPerm modified mode [ '_test/ect/layout', 420, 438 ]
+37 silly gunzTarPerm extractEntry _test/ect/list
+38 silly gunzTarPerm modified mode [ '_test/ect/list', 420, 438 ]
+39 silly gunzTarPerm extractEntry _test/ect/page
+40 silly gunzTarPerm modified mode [ '_test/ect/page', 420, 438 ]
+41 silly gunzTarPerm extractEntry _test/page.html
+42 silly gunzTarPerm modified mode [ '_test/page.html', 420, 438 ]
+43 silly gunzTarPerm extractEntry tasks/ect.js
+44 silly gunzTarPerm modified mode [ 'tasks/ect.js', 420, 438 ]
+45 silly gunzTarPerm extractEntry tests/ect/layouts-ect/layout.ect
+46 silly gunzTarPerm modified mode [ 'tests/ect/layouts-ect/layout.ect', 420, 438 ]
+47 silly gunzTarPerm extractEntry tests/ect/modules-ect/footer.ect
+48 silly gunzTarPerm modified mode [ 'tests/ect/modules-ect/footer.ect', 420, 438 ]
+49 silly gunzTarPerm extractEntry tests/ect/other-pages-ect/page_3.ect
+50 silly gunzTarPerm modified mode [ 'tests/ect/other-pages-ect/page_3.ect', 420, 438 ]
+51 silly gunzTarPerm extractEntry tests/ect/other-pages-ect/page_4.ect
+52 silly gunzTarPerm modified mode [ 'tests/ect/other-pages-ect/page_4.ect', 420, 438 ]
+53 silly gunzTarPerm extractEntry tests/ect/pages-ect/page_1.ect
+54 silly gunzTarPerm modified mode [ 'tests/ect/pages-ect/page_1.ect', 420, 438 ]
+55 silly gunzTarPerm extractEntry tests/ect/pages-ect/page_2.ect
+56 silly gunzTarPerm modified mode [ 'tests/ect/pages-ect/page_2.ect', 420, 438 ]
+57 silly gunzTarPerm extractEntry tests/page_1.html
+58 silly gunzTarPerm modified mode [ 'tests/page_1.html', 420, 438 ]
+59 silly gunzTarPerm extractEntry tests/page_2.html
+60 silly gunzTarPerm modified mode [ 'tests/page_2.html', 420, 438 ]
+61 silly gunzTarPerm extractEntry tests/page_3.html
+62 silly gunzTarPerm modified mode [ 'tests/page_3.html', 420, 438 ]
+63 silly gunzTarPerm extractEntry tests/page_4.html
+64 silly gunzTarPerm modified mode [ 'tests/page_4.html', 420, 438 ]
+65 verbose read json /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package/package.json
+66 silly lockFile b208faf3-63826-0-5083397410344332-package /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package
+67 verbose from cache /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package/package.json
+68 verbose tar pack [ '/Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz',
+68 verbose tar pack   '/var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package' ]
+69 verbose tarball /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz
+70 verbose folder /var/folders/9h/jsh0l1gx5rj9rmtkgg_gcr2w0000gn/T/npm-56279/1366270363826-0.5083397410344332/package
+71 silly lockFile 97e5d49a--ect-templates-0-2-1-package-tgz /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz
+72 verbose lock /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz /Volumes/shuvalov/Users/shuvalov/.npm/97e5d49a--ect-templates-0-2-1-package-tgz.lock
+73 silly lockFile 97e5d49a--ect-templates-0-2-1-package-tgz /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz
+74 silly lockFile a34a221f-runt-ect-templates-0-2-1-package /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package
+75 verbose lock /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package /Volumes/shuvalov/Users/shuvalov/.npm/a34a221f-runt-ect-templates-0-2-1-package.lock
+76 silly lockFile a34a221f-runt-ect-templates-0-2-1-package /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package
+77 verbose tar unpack /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz
+78 silly lockFile a34a221f-runt-ect-templates-0-2-1-package /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package
+79 verbose lock /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package /Volumes/shuvalov/Users/shuvalov/.npm/a34a221f-runt-ect-templates-0-2-1-package.lock
+80 silly gunzTarPerm modes [ '777', '666' ]
+81 silly gunzTarPerm extractEntry package.json
+82 silly gunzTarPerm extractEntry .npmignore
+83 silly gunzTarPerm extractEntry README.md
+84 silly gunzTarPerm extractEntry Gruntfile.js
+85 silly gunzTarPerm extractEntry .jshintrc
+86 silly gunzTarPerm extractEntry _test/ect/footer
+87 silly gunzTarPerm extractEntry _test/ect/layout
+88 silly gunzTarPerm extractEntry _test/ect/list
+89 silly gunzTarPerm extractEntry _test/ect/page
+90 silly gunzTarPerm extractEntry _test/page.html
+91 silly gunzTarPerm extractEntry tasks/ect.js
+92 silly gunzTarPerm extractEntry tests/ect/layouts-ect/layout.ect
+93 silly gunzTarPerm extractEntry tests/ect/modules-ect/footer.ect
+94 silly gunzTarPerm extractEntry tests/ect/other-pages-ect/page_3.ect
+95 silly gunzTarPerm extractEntry tests/ect/other-pages-ect/page_4.ect
+96 silly gunzTarPerm extractEntry tests/ect/pages-ect/page_1.ect
+97 silly gunzTarPerm extractEntry tests/ect/pages-ect/page_2.ect
+98 silly gunzTarPerm extractEntry tests/page_1.html
+99 silly gunzTarPerm extractEntry tests/page_2.html
+100 silly gunzTarPerm extractEntry tests/page_3.html
+101 silly gunzTarPerm extractEntry tests/page_4.html
+102 verbose read json /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package/package.json
+103 silly lockFile a34a221f-runt-ect-templates-0-2-1-package /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package
+104 silly shasum updated bytes 3253
+105 info shasum c2a89d0637ecf2ed9fbc308b54acb48af0e908f5
+105 info shasum /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz
+106 verbose from cache /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package/package.json
+107 verbose chmod /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz 666
+108 verbose chown /Volumes/shuvalov/Users/shuvalov/.npm/grunt-ect-templates/0.2.1/package.tgz [ 501, 20 ]
+109 silly lockFile 3a52ce78- .
+110 silly publish { name: 'grunt-ect-templates',
+110 silly publish   description: 'Static site compiler built around ect',
+110 silly publish   version: '0.2.1',
+110 silly publish   homepage: 'https://github.com/shuvalov-anton/grunt-ect',
+110 silly publish   author: { name: 'shuvalov-anton', url: 'http://anton-shuvalov.info/' },
+110 silly publish   repository:
+110 silly publish    { type: 'ssh',
+110 silly publish      url: 'ssh://git@github.com:shuvalov-anton/grunt-ect.git' },
+110 silly publish   bugs: { url: 'https://github.com/shuvalov-anton/grunt-ect/issues' },
+110 silly publish   license: 'MIT',
+110 silly publish   main: 'Gruntfile.js',
+110 silly publish   engines: { node: '>= 0.8.0' },
+110 silly publish   dependencies: { grunt: '>=0.4.0', ect: '~0.4.11' },
+110 silly publish   devDependencies: { grunt: '>=0.4.0', ect: '~0.4.11' },
+110 silly publish   keywords: [ 'template', 'ect', 'grunt', 'gruntplugin' ],
+110 silly publish   readme: '# grunt-ect\n\nHi!\n\nThis tool generates html files from ect templates.\n\n## Getting Started\n\n install via npm\n\n npm install npm install git+ssh://git@github.com:shuvalov-anton/grunt-ect.git --save-dev\n\nand in your Gruntfile.js file:\n\n  grunt.loadNpmTasks(\'grunt-ect\');\n\n## Usage\n\n  module.exports = function (grunt) {\n   grunt.initConfig({\n      ect: {\n        task: {\n         options: {\n            root: \'ect-test/ect\'\n          },\n          src:  \'page_*.ect\',\n         dst: \'ect-test/\'\n        }\n     }\n   });\n   grunt.task.registerTask(\'default\', \'ect\');\n    grunt.loadNpmTasks(\'grunt-ect\');\n  };\n\nrun with:\n\n grunt ect\n\n',
+110 silly publish   _id: 'grunt-ect-templates@0.2.1',
+110 silly publish   dist: { shasum: 'c2a89d0637ecf2ed9fbc308b54acb48af0e908f5' } }
+111 verbose url raw grunt-ect-templates
+112 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-ect-templates' ]
+113 verbose url resolved https://registry.npmjs.org/grunt-ect-templates
+114 info retry registry request attempt 1 at 13:32:44
+115 http PUT https://registry.npmjs.org/grunt-ect-templates
+116 http 409 https://registry.npmjs.org/grunt-ect-templates
+117 verbose url raw grunt-ect-templates
+118 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-ect-templates' ]
+119 verbose url resolved https://registry.npmjs.org/grunt-ect-templates
+120 info retry registry request attempt 1 at 13:32:45
+121 http GET https://registry.npmjs.org/grunt-ect-templates
+122 http 200 https://registry.npmjs.org/grunt-ect-templates
+123 error publish fail Cannot publish over existing version.
+123 error publish fail Bump the 'version' field, set the --force flag, or
+123 error publish fail     npm unpublish 'grunt-ect-templates@0.2.1'
+123 error publish fail and try again
+124 error System Darwin 12.3.0
+125 error command "/usr/local/Cellar/node/0.8.8/bin/node" "/usr/local/bin/npm" "publish"
+126 error cwd /Volumes/shuvalov/Users/shuvalov/Desktop/grunt-ect
+127 error node -v v0.8.8
+128 error npm -v 1.1.59
+129 error code EPUBLISHCONFLICT
+130 verbose exit [ 1, true ]

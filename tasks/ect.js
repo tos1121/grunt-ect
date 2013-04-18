@@ -10,13 +10,13 @@ module.exports = function(grunt) {
 
 
 		var	data      = this.data;
-		var	pattern   = data.src;
 		var dir       = data.dst;
 		var done      = this.async;
 		var options   = data.options;
+		var root      = options.root;
+		var src       = data.src;
 		var status    = true;
 		var variables = data.variables || {};
-		var files     = grunt.file.expand(path.resolve(options.root || '', pattern));
 		var ect       = new ECT(options || {});
 
 
@@ -39,18 +39,22 @@ module.exports = function(grunt) {
 
 		var log = function (src, dst) {
 			if (!src && !dst) return false;
-			grunt.log.ok(src+' was compiled to '+dst+' by grunt-ect');
+			var str = src+' was compiled to '+dst+' by grunt-ect';
+			grunt.log.ok(str);
 		};
 
 
-		var run = function () {
+		var compile = function (files) {
+			// returns false if at least one iteration fails
 			var outcome;
+
 			for (var key in files) {
 				if (files.hasOwnProperty(key)) {
 					
 					var src = files[key];
 					var dstFilename = path.basename(src, path.extname(src))+'.html';
 					var dst = path.resolve(dir, dstFilename);
+					
 					
 					var currentStatus = render(src, dst);
 					outcome = (outcome) ? currentStatus : false;  
@@ -59,16 +63,37 @@ module.exports = function(grunt) {
 			return outcome;
 		};
 
+		var getFilesList = function (root, src) {
+			var pattern;
+			var files;
+
+			if (typeof src === 'string') {
+				pattern = path.resolve(root || '', src);
+				files   = grunt.file.expand(pattern);
+			} else if (typeof src === 'object') {
+				files = [];
+				for (var key in src) {
+					if (src.hasOwnProperty(key)) {
+						var _files = []; 
+						pattern = path.resolve(root || '', src[key]);
+						_files = grunt.file.expand(pattern);
+						files = (_files) ? files.concat(_files) : files;
+					}
+				}
+			}
+			return files;
+		};
+
 
 		var init = function () {
+			var files = getFilesList(root, src);
 			try {
-				status = run();
+				status = compile(files);
 			} catch (e) {
 				grunt.log.error(e);
 			}
 			done(status);
 		}.bind(this)();
-
 
 		return init;
 

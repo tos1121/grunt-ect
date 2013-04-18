@@ -45,6 +45,6 @@ run with:
 Service variables are available into each template.
 ### List of service variables
 
-*	`basename`: `page`
-*	`filename`: `page.ect`
-*	`src`: `/abs/path/to/my/pwd/page.ect`
+*	`_ect.basename`: `page`
+*	`_ect.filename`: `page.ect`
+*	`_ect.src`: `/abs/path/to/my/pwd/page.ect`

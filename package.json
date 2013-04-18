@@ -1,18 +1,18 @@
 {
-  "name": "grunt-ect",
+  "name": "grunt-ect-templates",
   "description": "Static site compiler built around ect",
-  "version": "0.0.1",
-  "homepage": "https://bitbucket.org/2no/grunt-ect",
+  "version": "0.2.1",
+  "homepage": "https://github.com/shuvalov-anton/grunt-ect",
   "author": {
-    "name": "2no",
-    "url": "http://www.wakuworks.com/"
+    "name": "shuvalov-anton",
+    "url": "http://anton-shuvalov.info/"
   },
   "repository": {
     "type": "ssh",
-    "url": "ssh://git@bitbucket.org/2no/grunt-ect.git"
+    "url": "ssh://git@github.com:shuvalov-anton/grunt-ect.git"
   },
   "bugs": {
-    "url": "https://bitbucket.org/2no/grunt-ect/issues"
+    "url": "https://github.com/shuvalov-anton/grunt-ect/issues"
   },
   "license": "MIT",
   "main": "Gruntfile.js",
@@ -33,10 +33,5 @@
     "grunt",
     "gruntplugin"
   ],
-  "readme": "# grunt-ect\n\n## Getting Started\n\ninstall via npm\n\n    npm install git+ssh://git@bitbucket.org:2no/grunt-ect.git\n\nand in your Gruntfile.js file:\n\n    grunt.loadNpmTasks('grunt-ect');\n\n## Usage\n\n    grunt.initConfig({\n      ect: {\n        top: {\n          options: {\n            root: 'test/ect',\n          },\n          src:  'page',\n          dest: 'test/page.html',\n          variables: {\n            title : 'Hello, world!',\n            id : 'main',\n            links: [\n              { name : 'Google', url : 'http://google.com/' },\n              { name : 'Facebook', url : 'http://facebook.com/' },\n              { name : 'Twitter', url : 'http://twitter.com/' }\n            ],\n            upperHelper : function (string) {\n              return string.toUpperCase();\n            }\n          }\n        },\n        ...\n      },\n      ...\n    });\n\nrun with:\n\n    grunt ect\n\n",
-  "_id": "grunt-ect@0.0.1",
-  "dist": {
-    "shasum": "e41b00cfd5243e03d8625d1e2af3a186729ba25e"
-  },
-  "_from": "grunt-ect"
+  "readme": "# grunt-ect\n\nHi!\n\nThis tool generates html files from ect templates.\n\n## Getting Started\n\n install via npm\n\n npm install npm install git+ssh://git@github.com:shuvalov-anton/grunt-ect.git --save-dev\n\nand in your Gruntfile.js file:\n\n  grunt.loadNpmTasks('grunt-ect');\n\n## Usage\n\n  module.exports = function (grunt) {\n   grunt.initConfig({\n      ect: {\n        task: {\n         options: {\n            root: 'ect-test/ect'\n          },\n          src:  'page_*.ect',\n         dst: 'ect-test/'\n        }\n     }\n   });\n   grunt.task.registerTask('default', 'ect');\n    grunt.loadNpmTasks('grunt-ect');\n  };\n\nrun with:\n\n grunt ect\n\n"
 }

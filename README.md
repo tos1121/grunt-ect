@@ -12,7 +12,7 @@ I decided to start with the addition of support patterns in the file names. In f
 
  install via npm
 
-	npm install npm install git+ssh://git@github.com:shuvalov-anton/grunt-ect.git --save-dev
+	npm install grunt-ect-templates
 
 and in your Gruntfile.js file:
 
@@ -48,3 +48,4 @@ Service variables are available into each template.
 *	`_ect.basename`: `page`
 *	`_ect.filename`: `page.ect`
 *	`_ect.src`: `/abs/path/to/my/pwd/page.ect`
+*	`_ect.debug`: it's true if `grunt --debug`

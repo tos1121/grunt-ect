@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 
 
 		var	data          = this.data;
+		var debug         = !!grunt.option('debug');
 		var dir           = data.dst;
 		var done          = this.async;
 		var options       = data.options;
@@ -20,6 +21,7 @@ module.exports = function(grunt) {
 			variables.ect = {};
 		var ect           = new ECT(options || {});
 
+		console.log(debug);
 
 		var render = function (src, dst) {
 
@@ -28,10 +30,13 @@ module.exports = function(grunt) {
 
 			// init service variables
 			variables._ect = {
+				debug: debug,
 				basename: path.basename(src, path.extname(src)),
 				filename: path.basename(src),
 				src: src
 			};
+
+
 
 			var html = ect.render(src, variables);
 			if (!html) return false;

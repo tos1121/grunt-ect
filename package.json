@@ -1,7 +1,7 @@
 {
   "name": "grunt-ect-templates",
   "description": "Static site compiler built around ect",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "homepage": "https://github.com/shuvalov-anton/grunt-ect",
   "author": {
     "name": "shuvalov-anton",

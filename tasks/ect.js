@@ -8,101 +8,79 @@ module.exports = function(grunt) {
 
 	grunt.registerMultiTask('ect', 'generates an html file from an ect templates', function() {
 
-
+		// Data
 		var	data          = this.data;
-		var debug         = !!grunt.option('debug');
-		var dir           = data.dst;
-		var done          = this.async;
+		var cwd           = data.cwd;
+		var patterns      = data.patterns;
+		var dest          = data.dest;
+
+		// ECT and its options
 		var options       = data.options;
-		var root          = options.root;
-		var src           = data.src;
-		var status        = true;
 		var variables     = data.variables || {};
-			variables.ect = {};
+			variables.__  = {}; // Special data.
 		var ect           = new ECT(options || {});
 
-		console.log(debug);
+		// Grunt async
+		var done          = this.async();
 
-		var render = function (src, dst) {
+		var compile = function (files, cwd, variables) {
 
-			if (!src || !dst) return false;
-			if (!grunt.file.exists(src)) return false;
+			var status = true; // Start with no errors
 
-			// init service variables
-			variables._ect = {
-				debug: debug,
-				basename: path.basename(src, path.extname(src)),
-				filename: path.basename(src),
-				src: src
-			};
-
-
-
-			var html = ect.render(src, variables);
-			if (!html) return false;
-
-			grunt.file.write(dst, html);
-			if (grunt.file.exists(dst)) {
-				log(src, dst);
-				return true;
-			}
-			return false;
-		};
-
-
-		var log = function (src, dst) {
-			if (!src && !dst) return false;
-			var str = src+' was compiled to '+dst+' by grunt-ect';
-			grunt.log.ok(str);
-		};
-
-
-		var compile = function (files) {
-			// returns false if at least one iteration fails
-			var outcome;
 
 			for (var key in files) {
 				if (files.hasOwnProperty(key)) {
-					
-					var src = files[key];
-					var dstFilename = path.basename(src, path.extname(src))+'.html';
-					var dst = path.resolve(dir, dstFilename);
-					
-					
-					var currentStatus = render(src, dst);
-					outcome = (outcome) ? currentStatus : false;  
+					var file = files[key];
+
+					// export basename to template
+					variables.__.filename = path.basename(file);
+					variables.__.basename = path.basename(file, '.ect');
+
+					// src && dst are absolute path to ect source and ect dst
+					var src = path.resolve(cwd, file);
+					// hardcore. Get dest directory. Concat it to file dirname, then concat sum to filename w/o extention. And append '.html' to result
+					var dst = path.resolve(dest, path.dirname(file), path.basename(file, path.extname(file))+'.html');
+
+					var html = ect.render(src, variables);
+					grunt.file.write(dst, html);
+					status = (status && grunt.file.exists(dst));
+					if (status) {
+						grunt.log.ok(src+' was compiled to '+dst);
+					} else {
+						grunt.fail.warn('something went wrong when `'+src+'` was compiled to `'+dst+'`');
+					}
 				}
 			}
-			return outcome;
+			return status;
 		};
 
+		var getFilesList = function (patterns, cwd) {
 
-		var getFilesList = function (root, src) {
-			var pattern;
-			var files;
+			if (!patterns) return false;
+			
+			var files = [];
+			var options = {};
+				options.cwd = cwd;
 
-			if (typeof src === 'string') {
-				pattern = path.resolve(root || '', src);
-				files   = grunt.file.expand(pattern);
-			} else if (typeof src === 'object') {
-				files = [];
-				for (var key in src) {
-					if (src.hasOwnProperty(key)) {
-						var _files = []; 
-						pattern = path.resolve(root || '', src[key]);
-						_files = grunt.file.expand(pattern);
-						files = (_files) ? files.concat(_files) : files;
-					}
+			// make it array anyway
+			if (typeof patterns === 'string') {
+				patterns = [patterns];
+			} 
+
+			for (var key in patterns) {
+				if (patterns.hasOwnProperty(key)) {
+					var pattern = patterns[key];
+					files = files.concat(grunt.file.expand(options, pattern));
 				}
 			}
 			return files;
 		};
 
-
 		var init = function () {
-			var files = getFilesList(root, src);
+			var status;
+			var files = getFilesList(patterns, cwd);
 			try {
-				status = compile(files);
+				status = compile(files, cwd, variables);
 			} catch (e) {
 				grunt.log.error(e);
 			}
@@ -110,6 +88,5 @@ module.exports = function(grunt) {
 		}.bind(this)();
 
 		return init;
-
 	});
 };

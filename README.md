@@ -16,36 +16,39 @@ I decided to start with the addition of support patterns in the file names. In f
 
 and in your Gruntfile.js file:
 
-	grunt.loadNpmTasks('grunt-ect');
+	grunt.loadNpmTasks('grunt-ect-templates');
 
 ## Usage
 
-	module.exports = function (grunt) {
-		grunt.initConfig({
-			ect: {
-				task: {
-					options: {
-						root: 'ect-test/ect'
-					},
-					src:  'page_*.ect',
-					dst: 'ect-test/'
-				}
-			}
-		});
-		grunt.task.registerTask('default', 'ect');
-		grunt.loadNpmTasks('grunt-ect');
+	module.exports = function(grunt) {
+	  grunt.initConfig({
+	    ect: {
+	      test: {
+	        options: {
+	          ext: '.ect',
+	          root: 'tests/ect'
+	        },
+	        cwd: 'tests/ect',
+	        patterns:  ['**/page_*.ect'],
+	        dest: 'tests/compiled/'
+	      }
+	    }
+	  });
+
+	  grunt.task.registerTask('default', 'ect');
+	  grunt.loadNpmTasks('grunt-ect-templates');
 	};
 
 run with:
 
 	grunt ect
 
-## Service variables
+## Special object '__'
 
-Service variables are available into each template.
-### List of service variables
+I need it that I can generate CSS classes by file basename.
 
-*	`_ect.basename`: `page`
-*	`_ect.filename`: `page.ect`
-*	`_ect.src`: `/abs/path/to/my/pwd/page.ect`
-*	`_ect.debug`: it's true if `grunt --debug`
+*	`<%= @__.basename %>` — contains file basename. 
+*	`<%= @__.filename %>` — contains file name.
+
+
+

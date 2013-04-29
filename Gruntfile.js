@@ -1,18 +1,16 @@
 'use strict';
 
-module.exports = function(grunt)
-{
+module.exports = function(grunt) {
   grunt.initConfig({
     ect: {
       test: {
         options: {
           ext: '.ect',
-          root: 'tests/ect',
-          open: '{{',
-          close: '}}'
+          root: 'tests/ect'
         },
-        src:  ['pages-ect/page_*.ect','other-pages-ect/page_*.ect'],
-        dst: 'tests/'
+        cwd: 'tests/ect',
+        patterns:  ['**/page_*.ect'],
+        dest: 'tests/compiled/'
       }
     }
   });

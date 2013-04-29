@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 		// ECT and its options
 		var options       = data.options;
 		var variables     = data.variables || {};
+			variables.__  = {}; // Special data.
 		var ect           = new ECT(options || {});
 
 		// Grunt async
@@ -26,9 +27,14 @@ module.exports = function(grunt) {
 
 			var status = true; // Start with no errors
 
+
 			for (var key in files) {
 				if (files.hasOwnProperty(key)) {
 					var file = files[key];
+
+					// export basename to template
+					variables.__.filename = path.basename(file);
+					variables.__.basename = path.basename(file, '.ect');
 
 					// src && dst are absolute path to ect source and ect dst
 					var src = path.resolve(cwd, file);
@@ -67,7 +73,6 @@ module.exports = function(grunt) {
 					files = files.concat(grunt.file.expand(options, pattern));
 				}
 			}
-			console.log(files);
 			return files;
 		};
 

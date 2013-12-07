@@ -52,3 +52,7 @@ I need it that I can generate CSS classes by file basename.
 
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shuvalov-anton/grunt-ect/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

@@ -42,3 +42,10 @@ and in your Gruntfile.js file:
 run with:
 
 	grunt ect
+
+## Special object '__'
+
+I need it that I can generate CSS classes by file basename.
+
+*	`<%= @__.basename %>` — contains file basename. 
+*	`<%= @__.filename %>` — contains file name.

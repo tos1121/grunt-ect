@@ -4,7 +4,7 @@ Hi!
 
 This tool generates html files from ect templates.
 
-I spied the idea from [https://bitbucket.org/2no/grunt-ect](), because I'm not entirely staged implementation. 
+I spied the idea from [https://bitbucket.org/2no/grunt-ect](https://bitbucket.org/2no/grunt-ect), because I'm not entirely staged implementation. 
 I decided to start with the addition of support patterns in the file names. In fact, I rewrote almost all the implementation.
 
 
@@ -49,10 +49,3 @@ I need it that I can generate CSS classes by file basename.
 
 *	`<%= @__.basename %>` — contains file basename. 
 *	`<%= @__.filename %>` — contains file name.
-
-
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shuvalov-anton/grunt-ect/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

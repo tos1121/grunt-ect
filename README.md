@@ -10,11 +10,11 @@ I decided to start with the addition of support patterns in the file names. In f
 
 ## Getting Started
 
- install via npm
+If you haven't used Grunt before, be sure to check out the Getting Started guide, as it explains how to create a Gruntfile as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 	npm install --save-dev grunt-ect-templates
 
-and in your Gruntfile.js file:
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 	grunt.loadNpmTasks('grunt-ect-templates');
 

@@ -1,5 +1,7 @@
 # grunt-ect
 
+[![NPM](https://nodei.co/npm/grunt-ect-templates.png?downloads=true)](https://nodei.co/npm/grunt-ect-templates/)
+
 Hi!
 
 This tool generates html files from ect templates.
